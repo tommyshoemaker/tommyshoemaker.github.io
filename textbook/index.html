@@ -11,25 +11,106 @@
 
 	<body>
 		<script>
-			let urlList = ["http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?platform=1099&bookid=1011826&pageid="];
-			function redirect(textbook) {
-				let pageNumber = document.getElementById("pageNumberGeomH").value;
-				urlList.push(pageNumber);
-				finalUrl = urlList.join("");
+			let urlListGeometry = ["http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?platform=1099&bookid=1011826&pageid="];
+			function redirectGeometry() {
+				let pageNumber = document.getElementById("pageNumberGeom").value;
+				urlListGeometry.push(pageNumber);
+				finalUrl = urlListGeometry.join("");
 				window.open(finalUrl, '_self');
-				urlList = ["http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?platform=1099&bookid=1011826&pageid="];
+				urlListGeometry = ["http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?platform=1099&bookid=1011826&pageid="];
+			};
+			let urlListAlgebraII = ["http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?platform=1099&bookid=1011707&pageid="];
+			function redirectAlgebraII() {
+				let pageNumber = document.getElementById("pageNumberAlgII").value;
+				urlListAlgebraII.push(pageNumber);
+				finalUrl = urlListAlgebraII.join("");
+				window.open(finalUrl, '_self');
+				urlListAlgebraII = ["http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?platform=1099&bookid=1011707&pageid="];
 			};
 		</script>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Tommy Shoemaker</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link disabled" href="projects">Projects</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="textbook">Textbooks</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 		<div class="container-fluid">
-			<h1>Geometry H. Textbook</h1>
-			<form>
-				<div class="form-group">
-					<label for="pageNumberGeomH">Page Number</label>
-					<input type="number" class="form-control" id="pageNumberGeomH" placeholder="Page # (ex. '42')">
-					<small id="pageNumberHelp" class="form-text text-muted">Enter the page number assigned by the teacher here.</small>
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<strong>Alert!</strong> This website is not owned by Providence High School.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<h3>Textbook Page Links</h3>
+			<div class="card-columns">
+				<div class="card border-warning">
+					<div class="card-body">
+						<h5 class="card-title">Algebra I</h5>
+						<form>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="prepend">#</span>
+								</div>
+								<input type="number" class="form-control" id="pageNumberAlgI" placeholder="42">
+							</div>
+							<br>
+							<button type="button" class="btn btn-warning" onclick="redirectAlgebraI()" data-toggle="tooltip" title="Disabled" disabled>Coming Soon!</button>
+						</form>
+					</div>
 				</div>
-				<button type="button" class="btn btn-outline-info" onclick="redirect()">Open Textbook</button>
-			</form>
+				<div class="card border-success">
+					<div class="card-body">
+						<h5 class="card-title">Geometry</h5>
+						<form>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="prepend">#</span>
+								</div>
+								<input type="number" class="form-control" id="pageNumberGeom" placeholder="42">
+							</div>
+							<br>
+							<button type="button" class="btn btn-outline-success" onclick="redirectGeometry()">Open Textbook</button>
+						</form>
+					</div>
+				</div>
+				<div class="card border-success">
+					<div class="card-body">
+						<h5 class="card-title">Algebra II</h5>
+						<form>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="prepend">#</span>
+								</div>
+								<input type="number" class="form-control" id="pageNumberAlgII" placeholder="42">
+							</div>
+							<br>
+							<button type="button" class="btn btn-outline-success" onclick="redirectAlgebraII()">Open Textbook</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<h1 class="display-4">Instructions</h1>
+				<p class="lead">Follow these instructions for opening textbook pages</p>
+				<hr class="my-4">
+				<ul>
+					<li>Enter page number for appropriate book</li>
+					<li>Press "Open Textbook" button</li>
+					<li><i>Do not</i> press enter, the link will not work</li>
+					<li>If prompted, enter Pearson account details</li>
+					<li>Textbook should open to appropriate page</li>
+				</ul>
+			</div>
 		</div>
 	</body>
 </html>
